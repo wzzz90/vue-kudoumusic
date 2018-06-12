@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>kudou-demo</title>
+    <script>
+    // 页面适配代码，确保 1rem === 10px
+    (function() {
+      var html = document.documentElement
+
+      function resetFontSizeOfRootElement() {
+        var baseFontSize = 6.25;
+        var ratio = (375 / html.offsetWidth);
+
+        html.style.fontSize = (baseFontSize / ratio) * 100 + '%'
+        window.FONT_PX = (baseFontSize / ratio)
+        window.PIXEL_RATIO = ratio
+      }
+
+      resetFontSizeOfRootElement()
+      window.addEventListener('resize', resetFontSizeOfRootElement)
+      document.addEventListener('resize', resetFontSizeOfRootElement)
+    }())
+  </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
