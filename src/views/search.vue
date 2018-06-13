@@ -11,7 +11,9 @@
 
     <div class="search-list" v-show="togglePanel">
       <div class="search-list-title">最近热门</div>
-      <mt-button size="small" type="default" v-for="(item,index) in hotList" @click.native="replaceInput(index)" :key="index">{{item.keyword}}</mt-button>
+      <div class="hot-btn-container" style="display: flex;">
+      	<mt-button size="small" type="default" v-for="(item,index) in hotList" @click.native="replaceInput(index)" :key="index">{{item.keyword}}</mt-button>
+      </div>
     </div>
 
     <div class="songs-list" v-show="!togglePanel">
@@ -98,16 +100,78 @@
   }
 </script>
 <style scoped="scoped">
+  .search-panel {
+    padding: .1rem;
+    background-color: #fbfbfb;
+    height: .55rem;
+    display: flex;
+}
+.search-input {
+    width: 80%;
+    height: 100%;
+    display: block;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.07rem;
+    float: left;
+    background-color: #fff;
+    display: flex;
+}
+.search-icon {
+    display: block;
+    float: left;
+    width: 10%;
+    height: 100%;
+    background: url(http://m.kugou.com/v3/static/images/index/search_icon.png) no-repeat center;
+    background-size: auto 100%;
+}
+.search-input input {
+    width: 90%;
+    height: 100%;
+    display: inline-block;
+    padding: 0 .1rem 0 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+.hot-btn-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.hot-btn-container button {
+/*  width: 30%;*/
+}
+.search-btn {
+    display: block;
+    height: 100%;
+    width: 18%;
+    background-color: #2ba2fa;
+    float: right;
+    border-radius: .07rem;
+    color: #fff;
+    font-size: .15rem;
+    text-align: center;
+    line-height: .35rem;
+    border: none;
+    outline: none;
+}
 	.search-list {
-	  padding: 10px;
+	  padding: .1rem;
 	}
+	.search-list-title {
+    padding: .1rem;
+    color: deepskyblue;
+    font-size: .14rem;
+}
 	.search-list button {
-	  margin: 0 10px 10px 0;
-	}
-	.search-panel {
-	  display: flex;
+	  margin: 0.1rem .1rem 0;
 	}
 	.serach-first {
-	  margin: 0 10px;
+	  margin: 0 .1rem;
 	}
+	.search-total {
+    padding: .05rem .1rem;
+    background-color: #e1e1e1;
+    color: #484848;
+    font-size: .14rem;
+}
 </style>
