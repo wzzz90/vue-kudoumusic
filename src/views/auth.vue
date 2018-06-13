@@ -13,6 +13,7 @@
 
 <script>
   import HeadLogo from '@/components/header/HeadLogo'
+  import { Toast } from 'mint-ui';
   
   export default {
     components: {
@@ -28,7 +29,15 @@
     },
     methods: {
       login() {
-        this.$store.commit('login', this.users)
+        Toast({
+          message: '操作成功',
+          iconClass: 'icon icon-success',
+          duration: 2000
+        })
+        setTimeout(() => {
+          this.$store.commit('login', this.users)
+        }, 2000)
+        
       }
     }
   }
