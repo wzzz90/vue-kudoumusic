@@ -1,6 +1,6 @@
 # kudou-demo
 
-> 一个有关于酷狗音乐的项目，项目中使用了vue, vuex, vue-router,webpack。该项目借鉴于https://github.com/lavyun/vue-demo-kugou，表示感谢。
+> 一个有关于酷狗音乐的项目，项目中使用了vue, vuex, vue-router,vuex-localstorage,webpack。该项目借鉴于https://github.com/lavyun/vue-demo-kugou, 表示感谢。
 
 ## 如何使用
 
