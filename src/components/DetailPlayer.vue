@@ -61,6 +61,7 @@
         return minute + ':' + second;
       }
     },
+    
     computed: {
       ...mapGetters(['audio', 'detailPlayerFlag', 'isPlay']),
       
@@ -252,5 +253,8 @@
     background: url(../assets/images/play_next.png) no-repeat;
     background-size: 60% auto;
     background-position: center;
+}
+.isCurrent {
+  color: red;
 }
 </style>

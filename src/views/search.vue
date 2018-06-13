@@ -80,7 +80,12 @@
         this.togglePanel = true
         this.songList = []
         this.total = null
-        this.keyword = ''
+        if(this.keyword) {
+          this.keyword = ''
+        } else {
+          history.back()
+        }
+        
       },
       
       async search(){

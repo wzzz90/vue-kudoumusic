@@ -9,7 +9,7 @@
     </mt-swipe>
     
     <mt-cell v-for="(song, index) in songList" :key="index" :title="song.filename" @click.native="playSong(index)">
-      <img src="../assets/images/download_icon.png" width="20" height="20" @click="downloadSong(index)"/>
+      <img src="../assets/images/download_icon.png" width="20" height="20" @click="downloadSong(index)" class="twenty"/>
     </mt-cell>
   </div>
 </template>
@@ -55,11 +55,11 @@
   }
   
   .mint-swipe-indicator {
-    width: 12px !important;
-    height: 12px !important;
+    width: .12rem !important;
+    height: .12rem !important;
   }
   
   .mint-swipe-indicators {
-    bottom: 5px !important;
+    bottom: .05rem !important;
   }
 </style>

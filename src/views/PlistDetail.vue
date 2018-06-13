@@ -71,7 +71,7 @@
 
 <style scoped>
   .rank-banner-wrap {
-    height: 250px;
+    height: 2.5rem;
     background-size: 100%
   }
 

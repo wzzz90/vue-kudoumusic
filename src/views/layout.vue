@@ -1,6 +1,13 @@
 <template>
   <div id="app">
-    <router-view/>
+    <Head />
+    <div class="main">
+      <keep-alive>
+        <router-view/>
+      </keep-alive>
+    </div>    
+    <Player />
+    <DetailPlayer />
     
   </div>
 </template>
@@ -12,7 +19,7 @@
   import Auth from '@/views/auth'
   
   export default {
-    name: 'App',
+    name: 'Layout',
     components: {
       Head,
       Player,

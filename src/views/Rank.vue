@@ -39,9 +39,9 @@
 
 <style scoped>
   .rank .mint-cell-title img {
-      margin-right: 10px;
+      margin-right: .1rem;
   }
   .rank .mint-cell-wrapper{
-      font-size: 16px;
+      font-size: .16rem;
   }  
 </style>

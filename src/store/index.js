@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import router from '../router/index.js'
+import createPersist from 'vuex-localstorage'
 import axios from 'axios'
 Vue.use(Vuex)
 
@@ -28,6 +30,10 @@ const state = {
     songLength: 0,
     currentFlag: false
   },
+  users: {
+    userName: '',
+    password: ''
+  }
 }
 
 const getters = {
@@ -37,7 +43,8 @@ const getters = {
   isPlay: state => state.isPlay,
   audio: state => state.audio,
   detailPlayerFlag: state => state.detailPlayerFlag,
-  head: state => state.head
+  head: state => state.head,
+  users: state => state.users
 }
 
 const actions = {
@@ -150,11 +157,22 @@ const mutations = {
   resetHeadStyle(state) {
     state.head.style = {'background': 'rgba(43,162,251,0)'}
   },
+  
+  login(state, users) {
+    state.users = users
+    router.push('/index')
+  }
 }
 
 export default new Vuex.Store({
   state,
   getters,
   actions,
-  mutations
+  mutations,
+  
+  // 使用 vuex-localStorage 持久化页面状态
+  plugins: [createPersist({
+      namespace: 'kudou',
+      expires: 7 * 24 * 60 * 60 * 1e3
+  })]
 })

@@ -11,63 +11,73 @@ const Routes = new Router({
   routes: [
     {
       path: '/',
-      name: 'NewSong',
-      component: load('NewSong')
+      name: '',
+      component: load('layout'),
+      redirect: '/index',
+      children: [
+        {
+          path: '/index',
+          name: 'NewSong',
+          component: load('NewSong')
+        },
+        {
+          path: '/rank',
+          name: 'Rank',
+          component: load('Rank')
+        },
+        {
+          path: '/plist',
+          name: 'Plist',
+          component: load('Plist')
+        },
+        {
+          path: '/singer',
+          name: 'Singer',
+          component: load('Singer')
+        },
+        {
+          path: '/singer/list',
+          name: 'SingerList',
+          component: load('SingerList')
+        },
+        {
+          path: '/singer/detail',
+          name: 'SingerDetail',
+          component: load('SingerDetail')
+        },
+        {
+          path: '/plist/detail',
+          name: 'PlistDetail',
+          component: load('PlistDetail')
+        },
+        {
+          path: '/rank/detail',
+          name: 'RankDetail',
+          component: load('RankDetail')
+        },
+        {
+          path: '/search',
+          name: 'search',
+          component: load('search')
+        },        
+      ]
     },
     {
-      path: '/rank',
-      name: 'Rank',
-      component: load('Rank')
+      path: '/auth',
+      name: 'Auth',
+      component: load('auth') 
     },
-    {
-      path: '/plist',
-      name: 'Plist',
-      component: load('Plist')
-    },
-    {
-      path: '/singer',
-      name: 'Singer',
-      component: load('Singer')
-    },
-    {
-      path: '/singer/list',
-      name: 'SingerList',
-      component: load('SingerList')
-    },
-    {
-      path: '/singer/detail',
-      name: 'SingerDetail',
-      component: load('SingerDetail')
-    },
-    {
-      path: '/plist/detail',
-      name: 'PlistDetail',
-      component: load('PlistDetail')
-    },
-    {
-      path: '/rank/detail',
-      name: 'RankDetail',
-      component: load('RankDetail')
-    },
-    {
-      path: '/search',
-      name: 'search',
-      component: load('search')
-    },
-    
   ]
 })
 
 Routes.beforeEach((to, from, next) => {
   let requiredAuth = !to.path.match(/\/(auth|errors)/)
-//let authed = store.getters.getUser || 'sss'
-  let authed = 'sss'
+  let authed = store.getters.users
   
   if(requiredAuth) {
-    if (!authed) {
+    if (!authed.userName) {
       next('/auth')
     } else {
-      //next()
       if (to.matched.length === 0) {                                        //如果未匹配到路由
         from.name ? next({ name:from.name }) : next('/');   //如果上级也未匹配到路由则跳转登录页面，如果上级能匹配到则转上级路由
       } else {

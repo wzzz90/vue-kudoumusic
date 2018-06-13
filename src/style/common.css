@@ -22,6 +22,14 @@ img {
   max-width: 100%;
   vertical-align: top;  
 }
+.twenty {
+  width: .2rem;
+  height: .2rem;
+}
+.mint-swipe-item a, .mint-swipe-item a img {
+  width: 100%;
+  display: inline-block;
+}
 .mint-tab-item {
   padding: .12rem 0 !important;
 }
@@ -55,7 +63,7 @@ img {
     margin: 15px 0;
     width: 100%;
     border: 1px solid #e4e4e4;
-    border-radius: 5px;
+    border-radius: .05rem;
     background-color: #fbfbfb;
 }
 .cell-item:last-of-type {
@@ -63,8 +71,8 @@ img {
 }
 
 .cell-item {
-    padding: 12px 15px;
-    font-size: 15px;
+    padding: .12rem .15rem;
+    font-size: .15rem;
     border-bottom: 1px solid #e4e4e4;
     position: relative;
 }
@@ -72,12 +80,12 @@ img {
     content: '';
     display: block;
     position: absolute;
-    width: 12px;
+    width: .12rem;
     height: 100%;
     background: url(../assets/images/arrow_icon.png) no-repeat center;
-    background-size: 12px;
+    background-size: .12rem;
     top: 0;
-    right: 15px;
+    right: .15rem;
 }
 .player-padding {
     padding: 0 20%;
@@ -110,37 +118,37 @@ img {
 }*/
 .rank-info-list .rank-index {
     position: absolute;
-    left: 20px;
-    font-size: 12px;
-    margin-top: 4px;
+    left: .2rem;
+    font-size: .12rem;
+    margin-top: .04rem;
 }
   .rank-banner-wrap {
     width: 100%;
-    height: 200px;
-    margin-top: -43px;
+    height: 2rem;
+    margin-top: -0.43rem;
     position: relative;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
   }
   .rank-status {
-    height: 43px;
+    height: .43rem;
     width: 100%;
     position: absolute;
     bottom: 0;
     left: 0;
     background: -webkit-linear-gradient(bottom,rgba(0,0,0,.6),rgba(0,0,0,0));
-    line-height: 43px;
-    font-size: 15px;
+    line-height: .43rem;
+    font-size: .15rem;
     color: #fff;
 }
   .rank-list-good {
     display: inline-block;
-    padding: 2px 8px;
+    padding: 0.02rem .08rem;
     left: 12px !important;
-    border-radius: 8px;
+    border-radius: .08rem;
     color: #fff;
-    margin-top: 3px !important;
+    margin-top: .03rem !important;
   }
   
   .rank-list-first {
@@ -155,7 +163,7 @@ img {
     background-color: #F8B300;
   }
   .rank-info-list .mint-cell-title {
-    padding-left: 35px;
+    padding-left: .35rem;
   }
 .plist-info-list .mint-cell-title{
   padding-left: .1rem !important;
@@ -163,8 +171,8 @@ img {
 
   .plist-desp {
     width: 100%;
-    padding: 12px;
-    font-size: 16px;
+    padding: .12rem;
+    font-size: .16rem;
     position: relative;
     text-align: justify;
 }
@@ -174,16 +182,21 @@ img {
 }
 
 .plist-desp-p {
-    padding-right: 40px;
+    padding-right: .4rem;
     line-height: 135%;
 }
 .plist-desp-icon {
     display: block;
-    width: 24px;
-    height: 24px;
+    width: .24rem;
+    height: .24rem;
     position: absolute;
-    right: 10px;
-    top: 10px;
+    right: .1rem;
+    top: .1rem;
+}
+.mt-range-thumb {
+  width: .2rem;
+  height: .2rem;
+  top: .04rem;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 0)
 <style>…</style>
