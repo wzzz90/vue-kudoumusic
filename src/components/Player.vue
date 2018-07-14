@@ -29,6 +29,12 @@
     computed: {
       ...mapGetters(['audio', 'audioLoadding', 'showPlayer', 'isPlay'])
     },
+    mounted() {
+    	document.getElementById("audioPlay").pause();
+    	document.getElementById('audioPlay').currentTime = 0
+    	this.$store.commit('setAudioTime', 0);
+    	
+    },
     methods: {
       togglePanel() {
         this.toggleHide = !this.toggleHide;

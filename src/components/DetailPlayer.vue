@@ -83,14 +83,32 @@
           return temp          
         }
       },
+      
       lrcOffset(){
         if (this.songLrc) {
-          var offset = (this.songLrc.length - document.querySelectorAll('.isCurrentLrc').length - 2) * (-20)
-          return this.audio.currentLength + offset - this.audio.currentLength
+        	let index = document.querySelectorAll('.lrc-content>p').length - document.querySelectorAll('.isCurrentLrc').length
+        	if(index > 0) {
+        		index = (document.querySelectorAll('.lrc-content>p').length - document.querySelectorAll('.isCurrentLrc').length - 1)
+        	}
+      		if(document.querySelectorAll('.lrc-content>p').length > 0) {
+      			document.querySelectorAll('.lrc-content>p').forEach(item => item.classList.remove('active-lrc'))
+      			document.querySelectorAll('.lrc-content>p')[index].classList.add('active-lrc')
+      		}
+      		if(this.isPlay) {
+      			var offset = (this.songLrc.length - document.querySelectorAll('.isCurrentLrc').length - 2) * (-20)
+	          return this.audio.currentLength + offset - this.audio.currentLength
+      		} else {
+      			return 0
+      		}
+          
         }
-      }
+      },
       
     },
+    
+    mounted() {
+    },
+    
     methods: {
       
       hideDetailPlayer(){

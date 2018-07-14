@@ -203,3 +203,7 @@ img {
 input {
     line-height: normal!important;
 }
+
+.active-lrc {
+	color: #2CA2F9;
+}
